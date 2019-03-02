@@ -1,0 +1,2 @@
+https://medium.com/@umerfarooq_26378/tools-to-run-python-on-android-9060663972b4 (Andriod-Python)
+https://github.com/googlemaps/google-maps-services-python (google-maps-services-python)
