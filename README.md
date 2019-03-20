@@ -1,2 +1,2 @@
 # Skin Cancer
-hi
+This is a project to dectect skin cancer possibility.
