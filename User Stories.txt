@@ -1,6 +1,0 @@
-User Story:
-1. As a user, I want to know how likely I get  caught by skin cancer.
-2. As a user, I want it to provide some corresponding knowledge about skin cancer.
-3. As a user, I want it to recommand me nearby hospital if I have high skin cancer probability.
-4. As a student, I want it to learn about skin cancer.
-5  As a doctor, I want to recommand my paitents to keep tracking their skin by using the app of the project. 
