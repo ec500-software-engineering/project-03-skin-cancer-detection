@@ -1,0 +1,92 @@
+#:kivy 1.1.0
+
+Root:
+    text_input: text_input
+
+    FloatLayout:
+        
+        BoxLayout:
+            height: 30
+            size_hint_y: None
+            pos_hint: {'center_x': 0.5, 'top': 0.98}
+            Label:
+                font_size: 30
+                text: "Skin Care"
+            
+
+
+        BoxLayout:
+            orientation: "vertical"
+            pos_hint: {'center_x': 0.5, 'y': 0.1}
+            size_hint_y: None
+            size_hint: (0.5, 0.4)
+            spacing: 10
+            Button:
+                pos_hint: {'center_x': 0.5}
+                text: 'Detect'
+                on_release: root.show_load()
+            Button:
+                pos_hint: {'center_x': 0.5}
+                text: 'Find Nearby Doctor'
+                on_release: root.show_save()
+            Button:
+                pos_hint: {'center_x': 0.5}
+                text: 'Learn'
+                on_release: root.show_save()
+            Button:
+                pos_hint: {'center_x': 0.5}
+                text: 'History'
+                on_release: root.show_save()
+
+        BoxLayout:
+            pos_hint: {'center_x': 0.5, 'y': 0.6}
+            size_hint: (0.8, 0.3)
+            TextInput:
+                id: text_input
+                text: 'Results & Recommendation'
+
+<LoadDialog>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        FileChooserListView:
+            id: filechooser
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
+
+            Button:
+                text: "Submit"
+                on_release: root.load(filechooser.path, filechooser.selection)
+
+<SaveDialog>:
+    text_input: text_input
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        FileChooserListView:
+            id: filechooser
+            on_selection: text_input.text = self.selection and self.selection[0] or ''
+
+        TextInput:
+            id: text_input
+            size_hint_y: None
+            height: 30
+            multiline: False
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
+
+            Button:
+                text: "Save"
+                on_release: root.save(filechooser.path, text_input.text)
