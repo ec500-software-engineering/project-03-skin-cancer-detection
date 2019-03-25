@@ -20,6 +20,7 @@ Build an application that detects skin cancer using AI. Bases on results, recomm
 4. As a user, I want to ensure the privacy of the images.
 5. As a user, I would want to be recommended to nearby dermatoligists or general practioner.
 6. As a user, I would want to be educated on the results of the detected skin lesion.
+7. As a user, I would want to keep a track of the images uploaded.
 
 # Proposed Prototype:
 
@@ -35,6 +36,7 @@ Build an application that detects skin cancer using AI. Bases on results, recomm
 
 ## Sprint2:
 * Started working On AI Module
+Technology Used - Mobilenet
  ### Tested a machine learning model:
 
   Data Set used for Testing - https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000
@@ -50,6 +52,7 @@ Build an application that detects skin cancer using AI. Bases on results, recomm
 <img width="349" alt="Screen Shot 2019-03-17 at 9 16 16 PM" src="https://user-images.githubusercontent.com/43215312/54940936-1c030680-4f02-11e9-8c60-51b65cc25116.png">
 
 * Started working on UI Module:
+Technology Used - Kivy
 
 ![EBKP{{78FXHJWZOQ %OPH03](https://user-images.githubusercontent.com/43215312/54941507-62a53080-4f03-11e9-9ae1-3b0fa38db3c8.png)
 
