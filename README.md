@@ -35,4 +35,8 @@ Build an application that detects skin cancer using AI. Bases on results, recomm
   #### Block Diagram:
 <img width="655" alt="Screen Shot 2019-03-25 at 1 03 01 PM" src="https://user-images.githubusercontent.com/43215312/54939450-03452180-4eff-11e9-837d-6610d17e14c4.png">
 
+  #### Results:
+  <img width="1154" alt="Screen Shot 2019-03-25 at 1 12 22 PM" src="https://user-images.githubusercontent.com/43215312/54939726-ac8c1780-4eff-11e9-9a09-83a5fff982b8.png">
+
+
 
