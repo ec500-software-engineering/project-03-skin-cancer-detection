@@ -33,7 +33,6 @@ Build an application that detects skin cancer using AI. Bases on results, recomm
   Model used for Testing - https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000
 
   #### Block Diagram:
-
-<img width="676" alt="Screen Shot 2019-03-25 at 1 03 01 PM" src="https://user-images.githubusercontent.com/43215312/54939228-6d10fb80-4efe-11e9-8ef5-856753438ef7.png">
+<img width="655" alt="Screen Shot 2019-03-25 at 1 03 01 PM" src="https://user-images.githubusercontent.com/43215312/54939450-03452180-4eff-11e9-837d-6610d17e14c4.png">
 
 
