@@ -49,5 +49,12 @@ Build an application that detects skin cancer using AI. Bases on results, recomm
 
 <img width="349" alt="Screen Shot 2019-03-17 at 9 16 16 PM" src="https://user-images.githubusercontent.com/43215312/54940936-1c030680-4f02-11e9-8c60-51b65cc25116.png">
 
+* Started working on UI Module:
+
+![EBKP{{78FXHJWZOQ %OPH03](https://user-images.githubusercontent.com/43215312/54941507-62a53080-4f03-11e9-9ae1-3b0fa38db3c8.png)
+
+![Y471%WK_I(()XS 1N2WIZFX](https://user-images.githubusercontent.com/43215312/54941508-633dc700-4f03-11e9-83fe-fe8d837703c8.png)
+
+
 
 
