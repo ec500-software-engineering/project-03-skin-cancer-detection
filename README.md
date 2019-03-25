@@ -25,7 +25,16 @@ Build an application that detects skin cancer using AI. Bases on results, recomm
 
 <img width="615" alt="Screen Shot 2019-03-22 at 9 17 19 PM" src="https://user-images.githubusercontent.com/43215312/54859796-eedb0c00-4ce7-11e9-8778-d83419689505.png">
 
-# Sprint 1:
+## Sprint 1:
+* Build Project Architecture.
+![Aechitecture](https://user-images.githubusercontent.com/43215312/54940724-b31b8e80-4f01-11e9-8072-d7053f437443.png)
+
+* Decide Project tools and coding language.
+* Set up project enviroment.
+* Research and Plan.
+
+## Sprint2:
+* Started working On AI Module
  ### Tested a machine learning model:
 
   Data Set used for Testing - https://www.kaggle.com/kmader/skin-cancer-mnist-ham10000
@@ -37,6 +46,8 @@ Build an application that detects skin cancer using AI. Bases on results, recomm
 
   #### Results:
   <img width="1154" alt="Screen Shot 2019-03-25 at 1 12 22 PM" src="https://user-images.githubusercontent.com/43215312/54939726-ac8c1780-4eff-11e9-9a09-83a5fff982b8.png">
+
+<img width="349" alt="Screen Shot 2019-03-17 at 9 16 16 PM" src="https://user-images.githubusercontent.com/43215312/54940936-1c030680-4f02-11e9-8c60-51b65cc25116.png">
 
 
 
