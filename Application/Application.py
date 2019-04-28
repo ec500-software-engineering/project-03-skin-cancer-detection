@@ -15,7 +15,7 @@ import webbrowser
 import os
 import aimodule
 
-gmaps_key = googlemaps.Client(key = "AIzaSyBhkOO1fkzFJfsEKHBKOjagBoJ195Ue-Kw")
+gmaps_key = googlemaps.Client(key = "Your Key")
 marker_list = []
 learn_link_list = ["https://www.youtube.com/"
                    ,"https://www.youtube.com/"
