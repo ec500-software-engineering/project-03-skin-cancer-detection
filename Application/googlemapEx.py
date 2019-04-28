@@ -1,6 +1,6 @@
 import googlemaps
 
-KEY = "AIzaSyBhkOO1fkzFJfsEKHBKOjagBoJ195Ue-Kw"
+KEY = "YOUR KEY"
 gmaps_key = googlemaps.Client(key = KEY)
 
 def get_position(address):
