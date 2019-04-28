@@ -1,4 +1,5 @@
 from kivy.app import App
+from kivy.core.window import Window
 from kivy.uix.floatlayout import FloatLayout
 from kivy.factory import Factory
 from kivy.properties import ObjectProperty
@@ -160,4 +161,5 @@ def rm_all_markers(mapview):
     
 
 if __name__ == '__main__':
+    Window.fullscreen = True
     skinDetection().run()
