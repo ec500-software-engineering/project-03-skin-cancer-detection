@@ -37,8 +37,8 @@ Root:
                 on_release: root.show_learn()
             Button:
                 pos_hint: {'center_x': 0.5}
-                text: 'History'
-                on_release: 
+                text: 'About us'
+                on_release: root.show_us()
 
         BoxLayout:
             pos_hint: {'center_x': 0.5, 'y': 0.6}
@@ -168,3 +168,21 @@ Root:
                 id: address
                 text: 'Type your location here'
 
+
+<AboutUsDialog>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+
+        Label:
+            halign: 'center'
+            font_size: 30
+            text: "Made by:\nHaotian Cheng\nSunitha Priyadarshini Sampath"
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
