@@ -9,24 +9,21 @@ from kivy.garden.mapview import MapView, MapMarkerPopup
 from kivy.uix.image import AsyncImage
 from kivy.uix.label import Label
 import googlemaps
-from distanceCAL import get_distance
+# from distanceCAL import get_distance
 from googlemapEx import get_position, get_nearby_results, get_place_details, get_photo_html, get_phone_number
 import webbrowser
 import os
-import aimodule
+import aiModule
+import videoModule
 
-gmaps_key = googlemaps.Client(key = "Your Key")
 marker_list = []
-learn_link_list = ["https://www.youtube.com/"
-                   ,"https://www.youtube.com/"
-                   ,"https://www.youtube.com/"
-                   ,"https://www.youtube.com/"
-                   ,"https://www.youtube.com/"
-                   ,"https://www.youtube.com/"
-                   ,"https://www.youtube.com/"]
-skin_cancer_names = ["Actinic Keratoses", "Basal Cell Carcinoma",
-                     "Benign Keratosis", "Dermatofibroma",
-                     "Melanocytic Nevi","Melanoma","Vascular Skin Lesions"]
+learn_link_list = ["https://www.youtube.com/watch?v=AmU1zMuBwJY"
+                   ,"https://www.youtube.com/watch?v=wNpfo5DzHnE"
+                   ,"https://www.youtube.com/watch?v=c3znU3_96P4"
+                   ,"https://www.youtube.com/watch?v=lLCgur8bsyA"
+                   ,"https://www.youtube.com/watch?v=wVg2KKeLj28"
+                   ,"https://www.youtube.com/watch?v=CEZYXcrvvAA"
+                   ,"https://www.youtube.com/watch?v=ODKAWmgKWPM"]
 
 class LoadDialog(FloatLayout):
     load = ObjectProperty(None)
@@ -43,6 +40,9 @@ class MapViewDialog(FloatLayout):
     mapview = ObjectProperty()
     address = ObjectProperty()
     # mapview = MapView(zoom=11, lat=50.6394, lon=3.057)
+
+class AboutUsDialog(FloatLayout):
+    cancel = ObjectProperty(None)
 
 class Root(FloatLayout):
     loadfile = ObjectProperty(None)
@@ -64,27 +64,21 @@ class Root(FloatLayout):
                             size_hint=(0.9, 0.9))
         self._popup.open()
 
+    def show_us(self):
+        content = AboutUsDialog(cancel=self.dismiss_popup)
+        self._popup = Popup(title="Credits", content=content,
+                            size_hint=(0.9, 0.9))
+        self._popup.open()
+
     def detect(self, path, filename, ):
         try: 
-            output = aimodule.test(os.path.join(path, filename[0]))       
+            output = aiModule.test(os.path.join(path, filename[0]))       
             result = "Type: " + output[0] + "\nPossibility: " + str(output[1])
-            recommandation = "\nRecommandation: " + getRc(output)
+            recommandation = "\nRecommandation: " + videoModule.processResult(output)
             self.text_input.text = result + recommandation
             self.dismiss_popup()
         except IndexError:
-            print("please select  FILE")
-    
-    def load(self, path, filename):
-        with open(os.path.join(path, filename[0])) as stream:
-            self.text_input.text = stream.read()
-
-        self.dismiss_popup()
-
-    def save(self, path, filename):
-        with open(os.path.join(path, filename), 'w') as stream:
-            stream.write(self.text_input.text)
-
-        self.dismiss_popup()
+            print("please select FILE")
 
     def learn(self, num):
         webbrowser.open(learn_link_list[num])
@@ -119,6 +113,7 @@ Factory.register('Root', cls=Root)
 Factory.register('LoadDialog', cls=LoadDialog)
 Factory.register('LearnDialog', cls=LearnDialog)
 Factory.register('MapViewDialog', cls=MapViewDialog)
+Factory.register('AboutUsDialog', cls=AboutUsDialog)
 
 def mark(position, mapview, marker, result = []):
     LAT, LON = position
@@ -163,8 +158,6 @@ def rm_all_markers(mapview):
     marker_list.clear()
         
     
-def getRc(output):
-    return "please click learn -> " + skin_cancer_names[0]
 
 if __name__ == '__main__':
     skinDetection().run()

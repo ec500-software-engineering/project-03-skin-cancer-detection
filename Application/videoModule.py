@@ -1,9 +1,9 @@
-import random
-
 skin_cancer_names = ["Actinic Keratoses", "Basal Cell Carcinoma",
                      "Benign Keratosis", "Dermatofibroma",
                      "Melanocytic Nevi","Melanoma","Vascular Skin Lesions"]
 
-
-def test(filepath):
-    return (random.choice(skin_cancer_names), round(random.random(),2))
+def processResult(result):
+    if result[1] >= 0.9:
+        return "we highly recommand to go see a nearby dermatologist"
+    else:
+        return "please click learn -> " + result[0]
