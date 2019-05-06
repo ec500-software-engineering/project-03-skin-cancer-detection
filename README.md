@@ -61,7 +61,7 @@ Technology Used - Kivy
 
 ## Sprint3:
 * Challenges with loading the mobilenet model:
-The trained model, though has good accuracy throws errors when loading the model. The errors as shows in files Restore using .pb.ipynb and Restore using tf keras load (.h5 model).ipynb	seem to have errors that point to open github issues: https://github.com/keras-team/keras/issues/12588 
+The trained model has good accuracy, however, throws errors when loading the model to predict a single image. The errors as shows in files Restore using .pb.ipynb and Restore using tf keras load (.h5 model).ipynb	seem to have errors that point to open github issues: https://github.com/keras-team/keras/issues/12588 
 
 Hence we decided to build another model using Convolution Neural Network with keras tensorflow in backend. The new model however, seems to overfit the data. We are working on tuning it to fit the data in general.
 
