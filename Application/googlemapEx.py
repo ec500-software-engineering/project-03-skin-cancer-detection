@@ -1,6 +1,6 @@
 import googlemaps
 
-KEY = "YOUR KEY"
+KEY = "AIzaSyBhkOO1fkzFJfsEKHBKOjagBoJ195Ue-Kw"
 gmaps_key = googlemaps.Client(key = KEY)
 
 def get_position(address):
@@ -38,5 +38,7 @@ def get_phone_number(place_detail):
     except:
         return "not available"
     
-    
-    
+def get_rating(result):
+    rating = result['rating']
+    user_ratings_total = result['user_ratings_total']
+    return str(rating) + "(" + str(user_ratings_total) + ")"

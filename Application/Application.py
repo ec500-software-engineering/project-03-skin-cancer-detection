@@ -9,9 +9,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.garden.mapview import MapView, MapMarkerPopup
 from kivy.uix.image import AsyncImage
 from kivy.uix.label import Label
-import googlemaps
-# from distanceCAL import get_distance
-from googlemapEx import get_position, get_nearby_results, get_place_details, get_photo_html, get_phone_number
+from googlemapEx import get_position, get_nearby_results, get_place_details, get_photo_html, get_phone_number, get_rating
 import webbrowser
 import os
 import aiModule
@@ -46,8 +44,6 @@ class AboutUsDialog(FloatLayout):
     cancel = ObjectProperty(None)
 
 class Root(FloatLayout):
-    loadfile = ObjectProperty(None)
-    savefile = ObjectProperty(None)
     text_input = ObjectProperty(None)
 
     def dismiss_popup(self):
@@ -106,8 +102,9 @@ class Root(FloatLayout):
         except IndexError:
             address.text = "Please enter a valid position"
     
-class skinDetection(App):
-    pass
+class SkinDetectionApp(App):
+    def build(self):
+        return Root()
 
 
 Factory.register('Root', cls=Root)
@@ -131,6 +128,7 @@ def mark(position, mapview, marker, result = []):
         photo = get_photo_html(result)
         phone = get_phone_number(place_detail)
         name = result["name"]
+        rating = get_rating(result)
 
         # m = marker(lat = LAT, lon = LON) marker has been replaced by mapmarkerpopup
         bubble = Bubble(orientation = "vertical", padding = 5)
@@ -145,7 +143,7 @@ def mark(position, mapview, marker, result = []):
             elif index2 > 20:
                 name = name[:index2] + "\n" + name[index2:]
    
-        text = "[b]" + name + "[/b]\n" + "Phone Number: " + phone
+        text = "[b]" + name + "[/b]\n" + "Phone Number: " + phone + "\n" + "Rating: " + rating
         label = Label(text = text, markup = True, halign = "center")
         bubble.add_widget(label)
         m = MapMarkerPopup(lat=LAT,lon=LON,popup_size = (250, 230))
@@ -162,4 +160,4 @@ def rm_all_markers(mapview):
 
 if __name__ == '__main__':
     Window.fullscreen = True
-    skinDetection().run()
+    SkinDetectionApp().run()
