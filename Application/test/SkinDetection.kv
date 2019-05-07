@@ -1,0 +1,189 @@
+#:kivy 1.10.1
+#:import MapSource kivy.garden.mapview.MapSource
+#:import MapMarker kivy.garden.mapview.MapMarker
+
+
+<Root>:
+    text_input: text_input
+
+    
+        
+    BoxLayout:
+        height: 30
+        size_hint_y: None
+        pos_hint: {'center_x': 0.5, 'top': 0.98}
+        Label:
+            font_size: 30
+            text: "Skin Care"
+            
+
+
+    BoxLayout:
+        orientation: "vertical"
+        pos_hint: {'center_x': 0.5, 'y': 0.1}
+        size_hint_y: None
+        size_hint: (0.5, 0.4)
+        spacing: 10
+        Button:
+            pos_hint: {'center_x': 0.5}
+            text: 'Detect'
+            on_release: root.show_load()
+        Button:
+            pos_hint: {'center_x': 0.5}
+            text: 'Find Nearby Doctor'
+            on_release: root.show_map()
+        Button:
+            pos_hint: {'center_x': 0.5}
+            text: 'Learn'
+            on_release: root.show_learn()
+        Button:
+            pos_hint: {'center_x': 0.5}
+            text: 'About us'
+            on_release: root.show_us()
+
+    BoxLayout:
+        pos_hint: {'center_x': 0.5, 'y': 0.6}
+        size_hint: (0.8, 0.3)
+        TextInput:
+            id: text_input
+            font_size: 23
+            text: 'Results & Recommendation'
+
+<LoadDialog>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        FileChooserListView:
+            id: filechooser
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
+
+            Button:
+                text: "Submit"
+                on_release: root.load(filechooser.path, filechooser.selection)
+
+
+<LearnDialog>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+
+        Button:
+            text: "Actinic Keratoses"
+            on_release: root.learn(0)
+
+        Button:
+            text: "Basal Cell Carcinoma"
+            on_release: root.learn(1)
+
+        Button:
+            text: "Benign Keratosis"
+            on_release: root.learn(2)
+
+        Button:
+            text: "Dermatofibroma"
+            on_release: root.learn(3)
+
+        Button:
+            text: "Melanocytic Nevi"
+            on_release: root.learn(4)
+
+        Button:
+            text: "Melanoma"
+            on_release: root.learn(5)
+
+        Button:
+            text: "Vascular Skin Lesions"
+            on_release: root.learn(6)
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
+
+<Toolbar@BoxLayout>:
+    size_hint_y: None
+    height: '48dp'
+    padding: '4dp'
+    spacing: '4dp'
+    canvas:
+        Color:
+            rgba: .2, .2, .2, .6
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<ShadedLabel@Label>:
+    size: self.texture_size
+    canvas.before:
+        Color:
+            rgba: .2, .2, .2, .6
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+<MapViewDialog>:
+    RelativeLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        MapView:
+            id: mapview
+            lat: 42.3504997
+            lon: -71.1053991
+            zoom: 12
+            #size_hint: .5, .5
+            #pos_hint: {"x": .25, "y": .25}
+            #on_map_relocated: mapview2.sync_to(self)
+            #on_map_relocated: mapview3.sync_to(self)
+
+        Toolbar:
+            top: root.top
+            Button:
+                text: "Find"
+                on_release: root.find(address, mapview, MapMarker)
+
+            Spinner:
+                text: "mapnik"
+                values: MapSource.providers.keys()
+                on_text: mapview.map_source = self.text
+
+            Button:
+                text: "Back"
+                on_release: root.cancel()
+
+            
+
+
+        Toolbar:
+            TextInput:
+                id: address
+                text: 'Type your location here'
+
+
+<AboutUsDialog>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+
+        Label:
+            halign: 'center'
+            font_size: 30
+            text: "Made by:\nHaotian Cheng\nSunitha P. Sampath"
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
