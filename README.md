@@ -72,7 +72,8 @@ We trained model using resnet50 which has an accuracy of 86% and fits the test d
 We used tflite_converter to convert the keras model to tflite to be used in an andorid phone.
 
 
-
+* Challenges with kivy:
+kivy seemed to be an ideal choice for creating python based modules to use across various platforms. However, we faced challenges in converting the modules into android apk. We now built an application using andorid studio. The application uses the tflite model generated in the previous step to detect skin cancer lesions.
 
 
 
