@@ -1,5 +1,10 @@
 # Skin Cancer Detection
 
+# Run:
+Install libraries in the requirements.txt then open Application directory and simply run Application.py
+# Test:
+Open Application directory and run test.py to test if all module work well
+
 # Objective:
 Build an application that detects skin cancer using AI. Bases on results, recommend nearby dermatoligists (if postive) or general practicioner (if negative). The application also provides video results based on the results to educate the user.
 
