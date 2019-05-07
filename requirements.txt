@@ -1,3 +1,8 @@
 mypy
 flake8
 pytest
+kivy
+mapview
+googlemaps
+future
+requests
