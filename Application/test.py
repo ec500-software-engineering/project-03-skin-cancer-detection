@@ -21,8 +21,9 @@ class ModuleTest(unittest.TestCase):
         self.assertEqual(output, "we highly recommand to go see a nearby dermatologist")
 
     def test_aiModule(self):
-        self.assertEqual(aiModule.test("filepath")[0] in skin_cancer_names, True)
-        self.assertEqual(type(aiModule.test("filepath")[1]),float)
+        result = aiModule.test("df.jpg")
+        self.assertEqual(result[0], "Actinic Keratoses")
+        self.assertEqual(result[1], 1.0)
         
 
 if __name__ == "__main__":
