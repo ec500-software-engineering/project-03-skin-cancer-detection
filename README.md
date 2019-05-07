@@ -68,6 +68,9 @@ Hence we decided to build another model using Convolution Neural Network with ke
 We trained model using resnet50 which has an accuracy of 86% and fits the test data well. However, the model seems to be too slow in predicting the results.
 
 
+* Converted the keras .h5 model to tensorflow lite:
+We used tflite_converter to convert the keras model to tflite to be used in an andorid phone.
+
 
 
 
